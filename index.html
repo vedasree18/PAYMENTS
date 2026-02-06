@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>NovaPay - Digital Wallet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN - Temporary fix for immediate styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              'blob': 'blob 7s infinite',
+            },
+            keyframes: {
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f3f4f6;
+        -webkit-tap-highlight-color: transparent;
+      }
+      
+      /* Hide scrollbar for cleaner mobile look */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Dark mode simulation filter strategy */
+      html.dark-mode {
+        filter: invert(0.92) hue-rotate(180deg);
+      }
+      html.dark-mode img, 
+      html.dark-mode video,
+      html.dark-mode .no-invert {
+        filter: invert(1) hue-rotate(180deg);
+      }
+      
+      /* Animation extras */
+      @keyframes slide-up {
+        from { transform: translateY(100%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .animate-slide-up {
+        animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      @keyframes fade-in {
+        from { opacity: 0; transform: scale(0.98); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.2s ease-out forwards;
+      }
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-8px); }
+        75% { transform: translateX(8px); }
+      }
+      .animate-shake {
+        animation: shake 0.2s ease-in-out 2;
+      }
+      @keyframes pop {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+      }
+      .animate-pop {
+        animation: pop 0.1s ease-out;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin {
+        animation: spin 1s linear infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+      .animate-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

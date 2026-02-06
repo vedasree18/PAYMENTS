@@ -1,0 +1,7 @@
+{
+  "name": "NovaPay",
+  "description": "A modern Indian digital banking and wallet application featuring UPI payments, QR scanning, and transaction history.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
